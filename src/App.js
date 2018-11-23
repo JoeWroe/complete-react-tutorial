@@ -6,12 +6,27 @@ class App extends Component {
         age: 30
     }
 
+    handleClick(event) {
+        console.log(event.target)
+    }
+
+    handleMouseOver(event) {
+        console.log(event.target, event.pageX)
+    }
+
+    handleCopy(event) {
+        console.log(event.target)
+    }
+
     render() {
         return (
             <div className="app-content">
                 <h1>Hello, World!</h1>
                 <p>My name is: { this.state.name }</p>
                 <p>I am: { this.state.age }</p>
+                <button onClick={this.handleClick}>Click Me!</button>
+                <button onMouseOver={this.handleMouseOver}>Hover Me!</button>
+                <p onCopy={this.handleCopy}>Copy Me!</p>
             </div>
         );
     }
