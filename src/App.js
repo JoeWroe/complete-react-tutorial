@@ -11,6 +11,9 @@ class App extends Component {
     }
 
     handleMouseOver = (event) => {
+        this.setState({
+            age: Math.random() * 100
+        })
         console.log(this.state)
     }
 
