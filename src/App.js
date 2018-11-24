@@ -6,15 +6,15 @@ class App extends Component {
         age: 30
     }
 
-    handleClick(event) {
+    handleClick = (event) => {
         console.log(event.target)
     }
 
-    handleMouseOver(event) {
-        console.log(event.target, event.pageX)
+    handleMouseOver = (event) => {
+        console.log(this.state)
     }
 
-    handleCopy(event) {
+    handleCopy = (event) => {
         console.log(event.target)
     }
 
