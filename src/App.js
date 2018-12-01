@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Ninja from "./Ninja";
 
 class App extends Component {
     state = {
@@ -46,6 +47,8 @@ class App extends Component {
                     <input type="text" onChange={this.handleChange} />
                     <button>Submit</button>
                 </form>
+                <br/>
+                <Ninja name='Yoshi' age='30' belt='green' />
             </div>
         );
     }
