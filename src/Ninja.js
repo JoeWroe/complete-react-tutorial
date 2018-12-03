@@ -10,8 +10,8 @@ const Ninja = ({ninjas}) => {
                 <br/>
             </div>
         ) : (
-            <div className='redacted'>
-                <div>**PARENTAL SUPERVISION REQUIRED**</div>
+            <div className='redacted' key={ninja.id}>
+                <div>**PARENTAL SUPERVISION REQUIRED FOR NINJA { ninja.name.toUpperCase() }**</div>
                 <br/>
             </div>
         )
