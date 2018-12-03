@@ -3,8 +3,11 @@ import Ninja from "./Ninja";
 
 class App extends Component {
     state = {
-        name: 'Ryu',
-        age: 30
+        ninjas: [
+            { name: 'Ryu', age: 30, belt: 'black', id: 1 },
+            { name: 'Yoshi', age: 25, belt: 'green', id: 2 },
+            { name: 'Crystal', age: 19, belt: 'yellow', id: 3 }
+        ]
     }
 
     handleClick = (event) => {
@@ -48,7 +51,7 @@ class App extends Component {
                     <button>Submit</button>
                 </form>
                 <br/>
-                <Ninja name='Yoshi' age='30' belt='green' />
+                <Ninja ninjas={ this.state.ninjas } />
             </div>
         );
     }
