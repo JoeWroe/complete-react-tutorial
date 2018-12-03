@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+
+import AddNinja from "./AddNinja"
 import Ninja from "./Ninja";
 
 class App extends Component {
@@ -50,6 +52,8 @@ class App extends Component {
                     <input type="text" onChange={this.handleChange} />
                     <button>Submit</button>
                 </form>
+                <br/>
+                <AddNinja/>
                 <br/>
                 <Ninja ninjas={ this.state.ninjas } />
             </div>
