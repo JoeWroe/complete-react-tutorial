@@ -12,6 +12,14 @@ class App extends Component {
         ]
     }
 
+    addNinja = (ninja) => {
+        ninja.id = Math.random()
+        let ninjas = [...this.state.ninjas, ninja]
+        this.setState({
+            ninjas: ninjas
+        })
+    }
+
     handleClick = (event) => {
         console.log(event.target)
     }
@@ -53,7 +61,7 @@ class App extends Component {
                     <button>Submit</button>
                 </form>
                 <br/>
-                <AddNinja/>
+                <AddNinja addNinja={ this.addNinja }/>
                 <br/>
                 <Ninja ninjas={ this.state.ninjas } />
             </div>
