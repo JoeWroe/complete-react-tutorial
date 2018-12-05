@@ -20,6 +20,15 @@ class App extends Component {
         })
     }
 
+    deleteNinja = (id) => {
+        let ninjas = this.state.ninjas.filter(ninja => {
+            return ninja.id !== id
+        })
+        this.setState({
+            ninjas: ninjas
+        })
+    }
+
     handleClick = (event) => {
         console.log(event.target)
     }
@@ -63,7 +72,7 @@ class App extends Component {
                 <br/>
                 <AddNinja addNinja={ this.addNinja }/>
                 <br/>
-                <Ninja ninjas={ this.state.ninjas } />
+                <Ninja ninjas={ this.state.ninjas } deleteNinja={ this.deleteNinja } />
             </div>
         );
     }
