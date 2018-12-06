@@ -29,6 +29,16 @@ class App extends Component {
         })
     }
 
+    componentDidMount() {
+        console.log('Mounted')
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('updated')
+        console.log(prevProps)
+        console.log(prevState)
+    }
+
     handleClick = (event) => {
         console.log(event.target)
     }
