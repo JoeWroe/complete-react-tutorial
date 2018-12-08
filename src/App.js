@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import Navbar from './components/Navbar'
 import AddNinja from "./components/AddNinja"
 import Ninja from "./components/Ninja";
 
@@ -68,21 +69,21 @@ class App extends Component {
     render() {
         return (
             <div className="app-content">
-                <h1>Hello, World!</h1>
-                <p>My name is: { this.state.name }</p>
-                <p>I am: { this.state.age }</p>
-                <button onClick={this.handleClick}>Click Me!</button>
-                <button onMouseOver={this.handleMouseOver}>Hover Me!</button>
-                <p onCopy={this.handleCopy}>Copy Me!</p>
-                <br />
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" onChange={this.handleChange} />
-                    <button>Submit</button>
-                </form>
-                <br/>
-                <AddNinja addNinja={ this.addNinja }/>
-                <br/>
-                <Ninja ninjas={ this.state.ninjas } deleteNinja={ this.deleteNinja } />
+                <Navbar />
+                <div className="container">
+                    <h1>Hello, World!</h1>
+                    <p>My name is: { this.state.name }</p>
+                    <p>I am: { this.state.age }</p>
+                    <button onClick={this.handleClick}>Click Me!</button>
+                    <button onMouseOver={this.handleMouseOver}>Hover Me!</button>
+                    <p onCopy={this.handleCopy}>Copy Me!</p>
+                    <br />
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" onChange={this.handleChange} />
+                        <button>Submit</button>
+                    </form>
+                    <br/>
+                </div>
             </div>
         );
     }
