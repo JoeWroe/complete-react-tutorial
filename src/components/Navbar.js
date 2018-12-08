@@ -7,8 +7,8 @@ const Navbar = () => {
                 <a href="/" className="brand-logo left">Ninja Ninja!</a>
                 <ul className="right">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">Create Ninja</a></li>
-                    <li><a href="/">About the Ninjas</a></li>
+                    <li><a href="/add-ninja">Create Ninja</a></li>
+                    <li><a href="/ninjas">About the Ninjas</a></li>
                 </ul>
             </div>
         </nav>

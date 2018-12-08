@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import {BrowserRouter, Route} from 'react-router-dom'
 
 import Home from './components/Home'
 import Navbar from './components/Navbar'
+import AddNinja from "./components/AddNinja";
+import Ninja from "./components/Ninja";
 
 class App extends Component {
     state = {
@@ -14,7 +17,7 @@ class App extends Component {
     }
 
     setName = (name) => {
-        this.setState({ name })
+        this.setState({name})
     }
 
     handleSetAgeWithMouseOver = () => {
@@ -23,36 +26,51 @@ class App extends Component {
         })
     }
 
-    // addNinja = (ninja) => {
-    //     ninja.id = Math.random()
-    //     let ninjas = [...this.state.ninjas, ninja]
-    //     this.setState({
-    //         ninjas: ninjas
-    //     })
-    // }
-    //
-    // deleteNinja = (id) => {
-    //     let ninjas = this.state.ninjas.filter(ninja => {
-    //         return ninja.id !== id
-    //     })
-    //     this.setState({
-    //         ninjas: ninjas
-    //     })
-    // }
+    addNinja = (ninja) => {
+        ninja.id = Math.random()
+        let ninjas = [...this.state.ninjas, ninja]
+        this.setState({
+            ninjas: ninjas
+        })
+    }
+
+    deleteNinja = (id) => {
+        let ninjas = this.state.ninjas.filter(ninja => {
+            return ninja.id !== id
+        })
+        this.setState({
+            ninjas: ninjas
+        })
+    }
 
     render() {
         return (
-            <div className="app-content">
-                <Navbar/>
-                <Home
-                    name={this.state.name}
-                    age={this.state.age}
-                    setName={this.setName}
-                    setAge={this.handleSetAgeWithMouseOver}
-                />
-            </div>
-        );
-    }
-}
+            <BrowserRouter>
+                <div className="app-content">
+                    <Navbar/>
+                    <Route exact path='/' render={() => (
+                        <Home
+                            name={this.state.name}
+                            age={this.state.age}
+                            setName={this.setName}
+                            setAge={this.handleSetAgeWithMouseOver}
+                        />
+                    )}/>
+                    <Route path='/ninjas' render={() => (
+                        <Ninja
+                            ninjas={ this.state.ninjas }
+                            deleteNinja={ this.deleteNinja }
+                        />
+                    )}/>
+                    <Route path='/add-ninja' render={() => (
+                        <AddNinja
+                            addNinja={ this.addNinja }
+                        />
+                    )}/>
+                </div>
+            </BrowserRouter>
+                        );
+                    }
+                    }
 
-export default App;
+                    export default App;

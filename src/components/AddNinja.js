@@ -20,7 +20,7 @@ class AddNinja extends Component {
 
     render() {
         return(
-            <div>
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='name'>Name:</label>
                     <input type='text' id='name' onChange={this.handleChange} />
