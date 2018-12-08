@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom'
 
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import AddNinja from "./components/AddNinja";
-import Ninja from "./components/Ninja";
+import RainbowText from './hoc/RainbowText'
+
+import Home from './component/Home'
+import Navbar from './component/Navbar'
+import AddNinja from "./component/AddNinja";
+import Ninja from "./component/Ninja";
 
 class App extends Component {
     state = {
@@ -58,19 +60,19 @@ class App extends Component {
                     )}/>
                     <Route path='/ninjas' render={() => (
                         <Ninja
-                            ninjas={ this.state.ninjas }
-                            deleteNinja={ this.deleteNinja }
+                            ninjas={this.state.ninjas}
+                            deleteNinja={this.deleteNinja}
                         />
                     )}/>
                     <Route path='/add-ninja' render={() => (
                         <AddNinja
-                            addNinja={ this.addNinja }
+                            addNinja={this.addNinja}
                         />
                     )}/>
                 </div>
             </BrowserRouter>
-                        );
-                    }
-                    }
+        );
+    }
+}
 
-                    export default App;
+export default RainbowText(App);
