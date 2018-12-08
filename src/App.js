@@ -22,7 +22,7 @@ class App extends Component {
 
     handleSetAgeWithMouseOver = () => {
         this.setState({
-            age: Math.random() * 100
+            age: Math.floor(Math.random() * 80)
         })
     }
 
