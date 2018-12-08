@@ -7,14 +7,18 @@ const Ninja = ({ninjas, deleteNinja}) => {
                 <div>Name: {ninja.name}</div>
                 <div>Age: {ninja.age}</div>
                 <div>Belt: {ninja.belt}</div>
-                <button onClick={() => {deleteNinja(ninja.id)}}>Delete {ninja.name}</button>
+                <button onClick={() => {
+                    deleteNinja(ninja.id)
+                }}>Delete {ninja.name}</button>
                 <br/>
                 <br/>
             </div>
         ) : (
             <div className='redacted' key={ninja.id}>
-                <div>**PARENTAL SUPERVISION REQUIRED FOR NINJA { ninja.name.toUpperCase() }**</div>
-                <button onClick={() => {deleteNinja(ninja.id)}}>Delete {ninja.name}</button>
+                <div>**PARENTAL SUPERVISION REQUIRED FOR NINJA {ninja.name.toUpperCase()}**</div>
+                <button onClick={() => {
+                    deleteNinja(ninja.id)
+                }}>Delete {ninja.name}</button>
                 <br/>
                 <br/>
             </div>
